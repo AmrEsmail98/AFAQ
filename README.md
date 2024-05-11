@@ -7,6 +7,26 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+
+## About Task 
+
+first pull project and create database and connect it in .env file
+second php artisan migrate and insert date from file database 
+third "php artisan serve"
+
+use this link: "GET"  =>  http://127.0.0.1:8000/home
+
+if you need testing  please run  "php artisan test"
+
+for search vehicle  please send in request key name to search vehicle 
+
+for filtter cost please sent in request max or min  for sort  return date 
+
+for filtter created_at please sent in request max or min  for sort  return date 
+
+for filtter type please sent in request "fuel,insurance or service"  return date 
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
