@@ -20,12 +20,10 @@ class VehicleResource extends JsonResource
             return $date ? $date->format('Y-m-d') : null;
         });
 
-        // Collect and format insurance payment dates
         $insurancePaymentDates = $this->insurancePaymentDates->pluck('created_at')->map(function ($date) {
             return $date ? $date->format('Y-m-d') : null;
         });
 
-        // Collect and format service dates
         $serviceDates = $this->serviceDates->pluck('created_at')->map(function ($date) {
             return $date ? $date->format('Y-m-d') : null;
         });

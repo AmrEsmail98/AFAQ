@@ -24,32 +24,36 @@ class Vehicle extends Model
         return $this->hasMany(InsurancePayment::class);
     }
 
-    public function totalFuelCost() {
+    public function totalFuelCost()
+    {
         return $this->hasMany(FuelEntry::class)->selectRaw('vehicle_id, SUM(cost) as total_cost')
             ->groupBy('vehicle_id');
     }
-    
-    public function totalInsuranceAmount() {
+
+    public function totalInsuranceAmount()
+    {
         return $this->hasMany(InsurancePayment::class)->selectRaw('vehicle_id, SUM(amount) as total_amount')
             ->groupBy('vehicle_id');
     }
 
-    public function totalServices() {
+    public function totalServices()
+    {
         return $this->hasMany(Service::class)->selectRaw('vehicle_id, SUM(total) as total')
             ->groupBy('vehicle_id');
     }
-    
-    public function fuelEntryDates() {
+
+    public function fuelEntryDates()
+    {
         return $this->hasMany(FuelEntry::class)->select('vehicle_id', 'created_at');
     }
 
-    // Method to get all entry dates for insurance payments
-    public function insurancePaymentDates() {
+    public function insurancePaymentDates()
+    {
         return $this->hasMany(InsurancePayment::class)->select('vehicle_id', 'created_at');
     }
 
-    // Method to get all entry dates for services
-    public function serviceDates() {
+    public function serviceDates()
+    {
         return $this->hasMany(Service::class)->select('vehicle_id', 'created_at');
     }
 }
